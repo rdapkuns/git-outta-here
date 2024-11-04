@@ -1,0 +1,156 @@
+:root {
+    --error: #ff0000;
+    --primary: #000000;
+    --primary-light: #c9c9c9;
+}
+
+
+body {
+    height: 100vh;
+    font-family: monospace;
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    background-color: black;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: "Tiny5", sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+li {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 20%;
+}
+
+li:hover {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+input {
+    background: none;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    border-bottom: dashed 1px var(--primary);
+    text-align: center;
+    opacity: 0.5;
+}
+
+input:focus {
+    outline-color: var(--primary);
+    opacity: 1;
+}
+
+input::placeholder {
+    color: red;
+}
+
+
+button {
+    grid-column: 1 / -1;
+    background: var(--primary);
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button:focus {
+    outline: solid 1px var(--primary);
+}
+
+input:invalid {
+    color: var(--error);
+    border-color: white;
+}
+
+form:has(:valid) button {
+    opacity: 1;
+    background-color: #ff0000;
+}
+
+form:has(:invalid) button {
+    opacity: 0.1;
+    background-color: #ff0000;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid_cofre_text {
+    display: grid;
+    grid-template-columns: 10rem;
+    grid-template-rows: 10rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.grid_cofre_text img {
+    inline-size: 9rem;
+}
+
+.grid_cofre_text img,
+.grid_cofre_text input {
+    grid-row: 1;
+    grid-column: 1;
+    color: #ff0000;
+}
+
+.grid_cofre_text img {
+    z-index: 2;
+}
+
+.grid_cofre_text {
+    position: relative;
+}
+
+.grid_cofre_text img {
+    position: relative;
+    z-index: 1;
+}
+
+.grid_cofre_text input {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.grid_cofre_text img:hover+input,
+.grid_cofre_text input:focus {
+    z-index: 3;
+    opacity: 1;
+}
+
+.hidden{
+    display: none;
+}
