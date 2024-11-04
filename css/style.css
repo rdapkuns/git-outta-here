@@ -92,3 +92,26 @@ form:has(:invalid) button {
   opacity: 0.1;
   background-color: #ff0000;
 }
+
+
+.room1__number{
+  background-color: black;
+  padding: 0.8rem 1rem;
+  border-radius: 5px 5px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.room1__number:hover {
+  background-color: white;
+}
+
+.room1__container{
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: fit-content;
+  gap: 0.5rem;
+
+  align-self: center;
+}
